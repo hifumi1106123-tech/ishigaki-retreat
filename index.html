@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>石垣島 暮らしの体験プログラム | 暮らすように、島で過ごす。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #ffffff;
+    --bg-blue: #eaf3f6;
+    --bg-gray: #f5f6f7;
+    --ink: #2b2c2d;
+    --ink-soft: #767b80;
+    --navy: #3f6c7a;
+    --day-heading: #4a5c40;
+    --terracotta: #c1602f;
+    --line: #e6e8ea;
+    --sage: #7c9473;
+    --sage-deep: #5f7355;
+    --sage-soft: #eef2e6;
+    --sand-soft: #f6ecd9;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:2;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  h1,h2,h3{
+    font-family:'Noto Serif JP', serif;
+    font-weight:600;
+    letter-spacing:.04em;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:0 24px;}
+  section{padding:110px 0;}
+  section + section{border-top:1px solid var(--line);}
+  @media (max-width:768px){
+    section{padding:72px 0;}
+  }
+
+  /* Nav */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:840px; margin:0 auto; padding:18px 24px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .brand{
+    font-family:'Noto Serif JP', serif;
+    font-size:14px; letter-spacing:.1em; font-weight:600; color:var(--ink);
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex; align-items:flex-end;
+    background:
+      linear-gradient(180deg, rgba(18,28,34,.22) 0%, rgba(18,28,34,.55) 100%),
+      url('images/hero.jpg'),
+      linear-gradient(120deg, #dcecef 0%, #bfe0e6 30%, #8fc4cf 60%, #eef6f2 100%);
+    background-size:cover;
+    background-position:center;
+    color:#fff;
+    padding-bottom:80px;
+  }
+  .hero-inner{max-width:720px; margin:0 auto; padding:0 24px; width:100%; text-align:center;}
+  .hero-eyebrow{
+    font-size:12px; letter-spacing:.3em; opacity:.9; margin-bottom:20px;
+  }
+  .hero-for{
+    font-size:13.5px; line-height:2; max-width:460px; margin:0 auto 26px; opacity:.92; font-weight:400;
+    text-shadow:0 1px 12px rgba(0,0,0,.2);
+  }
+  .hero h1{
+    font-size:clamp(28px, 5vw, 44px);
+    line-height:1.7;
+    margin-bottom:22px;
+    text-shadow:0 2px 20px rgba(0,0,0,.2);
+  }
+  .hero p.lead{
+    font-size:14.5px; max-width:480px; margin:0 auto 4px; font-weight:300; opacity:.95;
+    text-shadow:0 1px 12px rgba(0,0,0,.2);
+  }
+
+  /* generic text sections */
+  .section-blue{background:var(--bg-blue);}
+  .section-gray{background:var(--bg-gray);}
+  .eyebrow{
+    font-size:11px; letter-spacing:.3em; color:var(--navy); margin-bottom:18px; font-weight:500; text-align:center;
+  }
+  .sec-title{
+    font-size:clamp(21px, 3vw, 27px); margin-bottom:28px; color:var(--ink); text-align:center;
+    font-weight:500;
+  }
+  .lead-text{
+    font-size:15px; color:var(--ink-soft); text-align:center; margin-bottom:8px;
+  }
+  .center{text-align:center;}
+
+  .prose p{font-size:15px; color:var(--ink); margin-bottom:22px; text-align:center;}
+  .prose p.soft{color:var(--ink-soft);}
+
+  /* checklist, plain */
+  .checklist-plain{
+    list-style:none; max-width:520px; margin:44px auto 0;
+  }
+  .checklist-plain li{
+    font-size:15px; padding-left:28px; position:relative; margin-bottom:16px; color:var(--ink);
+  }
+  .checklist-plain li::before{
+    content:"☑"; position:absolute; left:0; color:var(--navy);
+  }
+  .checklist-plain.two-col{
+    columns:2; column-gap:40px; max-width:600px;
+  }
+  @media (max-width:600px){
+    .checklist-plain.two-col{columns:1;}
+  }
+  .bridge-line{
+    max-width:520px; margin:36px auto 0; text-align:center; font-size:14px; color:var(--ink-soft);
+    font-family:'Noto Serif JP',serif; line-height:2;
+  }
+
+  /* founder */
+  .founder-photo{
+    width:120px; height:120px; border-radius:50%; margin:0 auto 32px;
+    background:linear-gradient(135deg,var(--bg-blue),#bcdbe2 55%,var(--navy));
+    box-shadow:0 4px 18px rgba(0,0,0,.06);
+  }
+
+  /* differentiation */
+  .diff-list{max-width:600px; margin:44px auto 0;}
+  .diff-item{padding:26px 0; border-top:1px solid var(--line); text-align:center;}
+  .diff-item:last-child{border-bottom:1px solid var(--line);}
+  .diff-item .tag{font-family:'Noto Serif JP',serif; font-size:15px; color:var(--ink); margin-bottom:8px;}
+  .diff-item p{font-size:13.5px; color:var(--ink-soft); line-height:1.9;}
+  .diff-item p strong{color:var(--navy); font-weight:500;}
+  .diff-pivot{
+    max-width:560px; margin:44px auto 0; text-align:center; font-size:14px; color:var(--ink-soft);
+    line-height:2.1;
+  }
+  .diff-close{
+    max-width:520px; margin:28px auto 0; text-align:center; font-size:14.5px; color:var(--ink);
+    font-family:'Noto Serif JP',serif; line-height:2;
+  }
+
+  /* itinerary */
+  .day-list{max-width:640px; margin:48px auto 0; display:flex; flex-direction:column; gap:24px;}
+  .day-card{border-radius:16px; padding:40px 30px; background:var(--sage-soft);}
+  .day-card:nth-child(2){background:var(--sand-soft);}
+  .day-card-head{text-align:center; margin-bottom:30px;}
+  .day-num{
+    display:inline-block; font-family:'Noto Serif JP',serif; font-size:11px; letter-spacing:.22em;
+    color:#fff; background:var(--sage-deep); padding:6px 18px; border-radius:20px; margin-bottom:16px;
+  }
+  .day-card:nth-child(2) .day-num{background:var(--terracotta);}
+  .day-title{font-size:21px; color:var(--day-heading); margin-bottom:8px;}
+  .day-theme{font-size:13.5px; color:var(--ink-soft); font-style:italic;}
+
+  .timeline{list-style:none;}
+  .timeline li{
+    display:flex; align-items:flex-start; gap:16px; padding:14px 4px;
+    border-top:1px solid rgba(43,42,38,.08);
+  }
+  .timeline li:first-child{border-top:none; padding-top:0;}
+  .tl-icon{
+    flex-shrink:0; width:38px; height:38px; border-radius:50%; background:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:16px;
+    box-shadow:0 2px 6px rgba(43,42,38,.08);
+  }
+  .tl-body{display:flex; flex-direction:column; gap:3px; padding-top:2px;}
+  .tl-time{font-size:11px; color:var(--terracotta); letter-spacing:.05em; font-weight:500;}
+  .day-card:nth-child(2) .tl-time{color:var(--sage-deep);}
+  .tl-text{font-size:13.5px; color:var(--ink); line-height:1.8;}
+
+  .day-free{
+    margin-top:22px; padding-top:20px; border-top:1px dashed rgba(43,42,38,.15);
+    font-size:12.5px; color:var(--ink-soft); text-align:center; line-height:1.9;
+  }
+
+  .itinerary-close{
+    max-width:520px; margin:48px auto 0; text-align:center; font-size:14px; color:var(--ink-soft); line-height:2.1;
+  }
+  .itinerary-close strong{display:block; color:var(--ink); font-family:'Noto Serif JP',serif; font-size:15.5px; margin-bottom:10px; font-weight:600;}
+  .itinerary-disclaimer{
+    max-width:480px; margin:28px auto 0; text-align:center; font-size:11px; color:var(--ink-soft); line-height:1.9;
+  }
+
+  /* feeling / transformation */
+  .feel{background:var(--bg-blue); color:var(--ink);}
+  .feel .sec-title{color:var(--ink);}
+  .feel .lead-text{color:var(--ink-soft);}
+  .feel .checklist-plain li{color:var(--ink); font-family:'Noto Serif JP',serif; font-size:14.5px;}
+  .feel-sub{
+    max-width:600px; margin:56px auto 0; padding-top:36px; border-top:1px solid var(--line);
+  }
+  .feel-sub .label{font-size:11.5px; letter-spacing:.1em; color:var(--ink-soft); text-align:center; margin-bottom:16px;}
+  .feel-sub-list{list-style:none; max-width:420px; margin:0 auto;}
+  .feel-sub-list li{font-size:12.5px; color:var(--ink-soft); text-align:center; margin-bottom:10px;}
+  .feel-sub-list li:last-child{margin-bottom:0;}
+  .feel-quote{
+    max-width:560px; margin:44px auto 0; text-align:center; font-family:'Noto Serif JP',serif;
+    font-size:16px; line-height:2.2; color:var(--ink); font-weight:500;
+  }
+  .feel-quote span{display:block; font-family:'Noto Sans JP',sans-serif; font-size:12.5px; font-weight:300; color:var(--ink-soft); margin-top:10px;}
+
+  /* pricing */
+  .value-stack{max-width:560px; margin:0 auto 12px;}
+  .value-stack p{font-size:14px; color:var(--ink-soft); text-align:center; margin-bottom:18px; line-height:2;}
+  .value-stack p.strong-line{color:var(--ink); font-family:'Noto Serif JP',serif; font-size:15.5px; font-weight:600;}
+
+  .price-block{
+    max-width:640px; margin:56px auto 0; background:#fff; border:1px solid var(--line); border-radius:20px; padding:44px 40px;
+    box-shadow:0 2px 20px rgba(0,0,0,.04);
+  }
+  .price-block + .price-block{margin-top:32px;}
+  .price-block.featured{border-color:var(--navy); box-shadow:0 6px 28px rgba(63,108,122,.1);}
+  .step-label{font-size:11.5px; letter-spacing:.15em; color:var(--navy); margin-bottom:10px;}
+  .price-block h3{font-size:19px; color:var(--ink); margin-bottom:10px;}
+  .price-block .tagline{font-size:13.5px; color:var(--ink-soft); margin-bottom:26px;}
+  .change-label{font-size:13px; color:var(--ink); font-weight:500; margin-bottom:14px;}
+  .checklist-inline{list-style:none; margin-bottom:28px;}
+  .checklist-inline li{
+    font-size:13.5px; padding-left:24px; position:relative; margin-bottom:10px; color:var(--ink);
+    text-align:left;
+  }
+  .checklist-inline li::before{content:"✓"; position:absolute; left:0; color:var(--navy); font-weight:700;}
+  .price-line{
+    display:flex; align-items:baseline; gap:10px; padding-top:22px; border-top:1px solid var(--line); margin-bottom:14px;
+  }
+  .price-line .amount{font-family:'Noto Serif JP',serif; font-size:26px; color:var(--ink);}
+  .price-line .label{font-size:11.5px; color:var(--ink-soft);}
+  .price-meta{font-size:12px; color:var(--ink-soft); line-height:1.9; margin-bottom:18px;}
+  .price-includes{font-size:12px; color:var(--ink-soft); line-height:1.9;}
+  .price-includes strong{display:block; color:var(--ink); font-weight:500; margin-bottom:4px; font-size:12.5px;}
+  .price-includes + .price-includes{margin-top:14px; padding-top:14px; border-top:1px dashed var(--line);}
+  .price-excludes strong{color:var(--ink-soft);}
+
+  .transport-note{
+    max-width:560px; margin:36px auto 0; text-align:center; font-size:12.5px; color:var(--ink-soft);
+  }
+
+  .value-note{
+    max-width:560px; margin:24px auto 0; text-align:center; font-size:13.5px; color:var(--ink-soft);
+    padding-top:24px; border-top:1px solid var(--line);
+  }
+
+  /* cancellation policy */
+  .cancel-card{
+    background:#fff; border:1px solid var(--line); border-radius:20px; padding:12px 32px;
+    box-shadow:0 2px 20px rgba(0,0,0,.04); max-width:520px; margin:44px auto 0;
+  }
+  .cancel-table{max-width:520px; margin:0 auto;}
+  .cancel-row{
+    display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+    padding:18px 4px; border-top:1px solid var(--line);
+  }
+  .cancel-row:first-child{border-top:none;}
+  .cancel-timing{font-size:13.5px; color:var(--ink-soft);}
+  .cancel-fee{font-size:14px; color:var(--ink); font-weight:500; white-space:nowrap;}
+  .cancel-fee.is-free{color:var(--navy); font-weight:600;}
+  .cancel-notes{max-width:560px; margin:48px auto 0;}
+  .cancel-notes-label{
+    font-family:'Noto Serif JP',serif; font-size:14px; color:var(--ink); text-align:center; margin-bottom:20px; font-weight:600;
+  }
+  .cancel-notes .checklist-plain{margin-top:0;}
+  .cancel-notes .checklist-plain li{font-size:13.5px; line-height:1.9;}
+
+  /* message */
+  .message blockquote{
+    font-family:'Noto Serif JP',serif; font-size:15.5px; line-height:2.2; color:var(--ink); text-align:center; max-width:560px; margin:0 auto;
+  }
+
+  /* final cta */
+  .final-cta{background:var(--bg-blue); color:var(--ink); text-align:center;}
+  .final-cta h2{color:var(--ink);}
+  .final-cta p{color:var(--ink-soft); font-size:14px; line-height:2; margin-bottom:8px;}
+  .reassure-list{
+    list-style:none; max-width:420px; margin:36px auto 0; text-align:left;
+  }
+  .reassure-list li{
+    font-size:13.5px; padding-left:26px; position:relative; margin-bottom:14px; color:var(--ink);
+  }
+  .reassure-list li:last-child{margin-bottom:0;}
+  .reassure-list li::before{content:"✓"; position:absolute; left:0; color:var(--navy); font-weight:700;}
+  .dm-badge{
+    display:inline-block; margin:44px auto 0; padding:18px 44px;
+    background:#fff; border:1px solid var(--navy); border-radius:999px;
+    color:var(--navy); font-family:'Noto Serif JP',serif; font-size:15.5px;
+    letter-spacing:.06em; font-weight:600; box-shadow:0 4px 16px rgba(63,108,122,.08);
+    white-space:nowrap;
+  }
+  @media (max-width:420px){
+    .dm-badge{padding:15px 22px; font-size:13px; white-space:normal;}
+  }
+
+  footer{
+    padding:36px 24px; text-align:center; font-size:11.5px; color:var(--ink-soft);
+  }
+
+  /* fine responsive tuning for small phones */
+  @media (max-width:480px){
+    .wrap{padding:0 20px;}
+    .hero-inner{padding:0 20px;}
+    .price-block{padding:36px 26px; border-radius:16px;}
+    .cancel-card{padding:8px 22px; border-radius:16px;}
+    .day-card{padding:32px 22px;}
+    .diff-item{padding:22px 0;}
+    .price-line{flex-wrap:wrap;}
+    .cancel-row{gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="brand">石垣島 暮らしの体験プログラム</div>
+  </div>
+</header>
+
+<!-- 1. ヒーロー：誰のためのサービスかを3秒で -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">ISHIGAKI LIVING EXPERIENCE PROGRAM</div>
+    <p class="hero-for">移住を考えはじめたあなたへ。<br>子育てに忙しい毎日を送るあなたへ。<br>今の暮らしに、小さな違和感があるあなたへ。</p>
+    <h1>暮らすように、<br>島で過ごす。</h1>
+    <p class="lead">観光でも、移住相談でもありません。2泊3日、石垣島に暮らすように過ごしながら、自分と家族にとって本当に大切な"これから"を見つける時間です。</p>
+  </div>
+</section>
+
+<!-- 2. 共感：違和感・不安への寄り添い -->
+<section class="section-gray">
+  <div class="wrap">
+    <div class="eyebrow">SUCH FEELINGS</div>
+    <h2 class="sec-title">こんな気持ち、ありませんか？</h2>
+    <p class="lead-text">「特に困っているわけではない。でも、このままでいいのかわからない。」<br>そんな気持ちを抱えて、この体験に参加される方がたくさんいます。</p>
+    <ul class="checklist-plain" style="margin-left:auto;margin-right:auto;">
+      <li>毎日忙しくて、自分のことを考える時間がない</li>
+      <li>家族との時間を、もっと大切にしたい</li>
+      <li>今の暮らしに不満はない。でも、何か違う気がする</li>
+      <li>移住に興味はあるけど、勇気が出ない</li>
+      <li>環境を変えてみたい、でも何から始めればいいかわからない</li>
+      <li>お金のことや仕事のことが不安</li>
+    </ul>
+    <p class="bridge-line">その違和感は、悪いことではありません。<br>むしろ、あなたが本当に大切にしたいものに、気づき始めているサインです。</p>
+  </div>
+</section>
+
+<!-- 3. 私も、そうでした：主催者ストーリー -->
+<section>
+  <div class="wrap prose">
+    <div class="eyebrow">MY STORY</div>
+    <h3 class="sec-title">私も、そうでした。</h3>
+    <p class="soft">東京にいた頃、毎日は"こなす"ことで精一杯でした。<br>朝から晩まで予定に追われ、気づけば「自分がどうしたいか」を<br>考える余白すらありませんでした。</p>
+    <p class="soft">「このままでいいのかな。」<br>そう思いながらも、日々の忙しさに紛れて、<br>その気持ちをいつも後回しにしていました。</p>
+    <p class="soft">石垣島に来て、最初に変わったのは景色でした。<br>でも、本当に変わったのは、<br>"暮らし方"ではなく、"自分の感じ方"だったと思います。</p>
+    <p class="soft">海を眺める時間。<br>隣にいる人と交わす何気ない会話。<br>家族と過ごす、何もない時間。</p>
+    <p class="soft">そんな何気ない毎日の中で、<br>「自分は本当はどんな暮らしがしたかったんだろう」<br>「何を大切にして生きていきたいんだろう」<br>そんなことを、少しずつ考えられるようになりました。</p>
+    <p class="soft">移住が正解だったわけではありません。<br>立ち止まって、自分と向き合う時間があったこと。<br>それが、私にとって一番大きな変化でした。</p>
+    <p>だからこのプログラムでも、<br>移住を決めてもらうことが目的ではありません。<br>あなたやご家族にとって、<br>本当に心地よい暮らしや、生き方を見つけるきっかけになれたら嬉しい。<br>その時間を、一緒につくれたらと思っています。</p>
+  </div>
+</section>
+
+<!-- 4. 他サービスとの違い -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">WHAT MAKES US DIFFERENT</div>
+    <h2 class="sec-title">「観光」でも、「移住相談」でも<br>ありません。</h2>
+    <p class="lead-text">移住体験や移住支援のプログラムは、全国に数多くあります。<br>その中で、私たちが大切にしているのは、<br>「暮らし」を体験しながら、自分たちにとって心地よい生き方を見つけることです。</p>
+    <div class="diff-list">
+      <div class="diff-item">
+        <div class="tag">観光は</div>
+        <p>景色や名所を楽しむ時間。</p>
+      </div>
+      <div class="diff-item">
+        <div class="tag">旅行は</div>
+        <p>非日常を味わう時間。</p>
+      </div>
+      <div class="diff-item">
+        <div class="tag">移住相談は</div>
+        <p>情報を集め、選択肢を知る時間。</p>
+      </div>
+    </div>
+    <p class="diff-pivot">そして、このプログラムは──<br>実際にこの島で暮らす人と出会い、日常を過ごし、その空気を感じながら、<br>「自分たちにとって、本当に大切にしたい暮らしは何だろう。」<br>そんな問いと向き合う時間です。</p>
+    <p class="diff-close">私たちは、答えを用意するのではなく、<br>その答えを見つける時間に寄り添う伴走者でありたいと思っています。</p>
+  </div>
+</section>
+
+<!-- 5. 2泊3日の過ごし方 -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">2 NIGHTS 3 DAYS</div>
+    <h2 class="sec-title">2泊3日の過ごし方</h2>
+    <p class="lead-text">"知る" から "感じる・体験する"、そして "考える" へ。<br>島の空気に包まれながら過ごす、3日間のご案内です。</p>
+
+    <div class="day-list">
+
+      <div class="day-card">
+        <div class="day-card-head">
+          <span class="day-num">DAY 1</span>
+          <h3 class="day-title">🌿 知る</h3>
+          <p class="day-theme">まずは、島の暮らしにふれる日。</p>
+        </div>
+        <ul class="timeline">
+          <li><span class="tl-icon">🤝</span><span class="tl-body"><span class="tl-time">15:00頃</span><span class="tl-text">集合・オリエンテーション</span></span></li>
+          <li><span class="tl-icon">🚶</span><span class="tl-body"><span class="tl-text">白保のまち歩き</span></span></li>
+          <li><span class="tl-icon">🥁</span><span class="tl-body"><span class="tl-text">八重山の伝統文化にふれる時間</span></span></li>
+          <li><span class="tl-icon">🌅</span><span class="tl-body"><span class="tl-text">サンセットタイム</span></span></li>
+          <li><span class="tl-icon">🍽️</span><span class="tl-body"><span class="tl-text">島の食材を楽しむウェルカムディナー</span></span></li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-head">
+          <span class="day-num">DAY 2</span>
+          <h3 class="day-title">🌺 感じる・体験する</h3>
+          <p class="day-theme">島の日常を、思いきり楽しむ日。</p>
+        </div>
+        <ul class="timeline">
+          <li><span class="tl-icon">☕</span><span class="tl-body"><span class="tl-text">ゆったり朝の島時間</span></span></li>
+          <li><span class="tl-icon">🛶</span><span class="tl-body"><span class="tl-text">マングローブSUP・カヤック体験</span></span></li>
+          <li><span class="tl-icon">🍴</span><span class="tl-body"><span class="tl-text">島の食材を楽しむランチ</span></span></li>
+          <li><span class="tl-icon">🏘️</span><span class="tl-body"><span class="tl-text">暮らしスポットめぐり（スーパー・学校・商店など）</span></span></li>
+          <li><span class="tl-icon">☕</span><span class="tl-body"><span class="tl-text">おすすめ島カフェでひと休み＆振り返り</span></span></li>
+          <li><span class="tl-icon">🌇</span><span class="tl-body"><span class="tl-time">夕方頃</span><span class="tl-text">プログラム終了</span></span></li>
+        </ul>
+        <p class="day-free">そのあとは自由に島時間を。<br>市街地散策やお買い物なども楽しめます。</p>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-head">
+          <span class="day-num">DAY 3</span>
+          <h3 class="day-title">☀️ 考える</h3>
+          <p class="day-theme">これからの暮らしを、自分たちのペースで見つめる日。</p>
+        </div>
+        <ul class="timeline">
+          <li><span class="tl-icon">🌊</span><span class="tl-body"><span class="tl-time">午前</span><span class="tl-text">自由時間（希望者はシュノーケリングなどのアクティビティもご案内可能です）</span></span></li>
+          <li><span class="tl-icon">🍽️</span><span class="tl-body"><span class="tl-text">ランチを楽しみながら3日間の振り返り</span></span></li>
+          <li><span class="tl-icon">💬</span><span class="tl-body"><span class="tl-text">暮らしについて、ゆっくりお話しする時間・質問タイム</span></span></li>
+          <li><span class="tl-icon">👋</span><span class="tl-body"><span class="tl-time">15:00頃</span><span class="tl-text">解散</span></span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="itinerary-close">
+      <strong>この3日間で得られるのは、移住の答えではありません。</strong>
+      "自分たちにとって心地よい暮らし"を考えるきっかけです。
+    </p>
+
+    <p class="itinerary-disclaimer">
+      ※ 上記は一例のスケジュールです。<br>
+      天候や季節、その日の状況に合わせて、一番心地よく過ごしていただけるよう内容や順番を調整する場合があります。
+    </p>
+  </div>
+</section>
+
+<!-- 6. 帰る頃には、きっと：感情ベースの変化 -->
+<section class="feel">
+  <div class="wrap">
+    <div class="eyebrow">WHAT YOU'LL FEEL</div>
+    <h2 class="sec-title">帰る頃には、きっと。</h2>
+    <p class="lead-text">サービスの内容よりも、大切にしたいことがあります。<br>この3日間を終えたとき、あなたがどんな気持ちになっているか。</p>
+    <ul class="checklist-plain" style="margin-left:auto;margin-right:auto;">
+      <li>気づけば、深呼吸できている自分がいます</li>
+      <li>「これでよかったんだ」と、肩の力が少し抜けています</li>
+      <li>家族との会話が、いつもより少し増えています</li>
+      <li>「また帰ってきたい」——そう思える場所ができています</li>
+      <li>焦っていた気持ちが、静かな自信に変わっています</li>
+      <li>「移住する」「今のままでいい」——どちらの答えも、自分で選べるようになっています</li>
+    </ul>
+    <div class="feel-sub">
+      <div class="label">具体的には、こんな変化も</div>
+      <ul class="feel-sub-list">
+        <li>自分たち家族に合った暮らしが見えてくる</li>
+        <li>移住する・しないを納得して決められる</li>
+        <li>地域の人とのつながりができる</li>
+        <li>不安が「わからない」から「わかった」に変わる</li>
+        <li>家族の絆が深まる</li>
+      </ul>
+    </div>
+    <p class="feel-quote">石垣島での体験が、家族の未来をひらく。
+      <span>家族で過ごす特別な時間が、新しい暮らしのヒントと自信になります。</span>
+    </p>
+  </div>
+</section>
+
+<!-- 7. 価格：価値の積み上げ→価格→安心 -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="eyebrow">PROGRAM &amp; PRICE</div>
+    <h2 class="sec-title">選べる2つのプログラム</h2>
+
+    <div class="value-stack">
+      <p>このプログラムでご提供しているのは、<br>ただ石垣島をご案内することではありません。</p>
+      <p>地域の方々とのつながりをつくり、暮らしの不安や疑問に寄り添いながら、<br>「自分たちにとって本当に心地よい暮らし」を見つけるための伴走です。</p>
+      <p>これらをすべてご自身で手配しようとすると、<br>多くの時間や手間がかかり、不安を感じる場面も少なくありません。</p>
+      <p class="strong-line">私たちは、その準備や調整、そして滞在中のサポートまで、しっかり伴走します。<br>だからこそ、この価格でご案内しています。</p>
+    </div>
+
+    <div class="price-block">
+      <div class="step-label">STEP 1</div>
+      <h3>2泊3日 暮らしの体験プラン</h3>
+      <p class="tagline">まずは、島の空気を感じて、これからを考えるきっかけに。</p>
+      <p class="change-label">この3日間で、こんなふうに変わります</p>
+      <ul class="checklist-inline">
+        <li>「まだ帰ってきたい場所」ができる</li>
+        <li>これからの暮らしを考えるきっかけになる</li>
+        <li>自分たちらしい暮らしのヒントが見つかる</li>
+      </ul>
+      <div class="price-line"><span class="amount">¥149,000</span><span class="label">（税込・2名まで）</span></div>
+      <p class="price-meta">期間：2泊3日　/　対象：個人・家族・ご夫婦など<br>大人・子どもを問わず、2名まで同一料金です。<br><br>3名以上でご参加の場合<br>高校生以上 +15,000円（税込）　小・中学生 +10,000円（税込）　未就学児 追加料金なし</p>
+      <div class="price-includes">
+        <strong>料金に含まれるもの</strong>
+        事前相談・ヒアリング、2泊3日の伴走サポート、プログラム内のアクティビティ体験（SUP・カヤックなど）、プログラム中にご一緒するお食事 など
+      </div>
+      <div class="price-includes price-excludes">
+        <strong>料金に含まれないもの</strong>
+        石垣島までの往復航空券、宿泊費、レンタカー代、自由時間中のお食事、お土産などの個人的なお買い物、希望者のみ参加する追加アクティビティ、旅行保険（必要に応じて各自ご加入ください）
+      </div>
+      <div class="price-includes">
+        航空券・宿泊費・レンタカー・自由時間中の費用をご準備いただければ、プログラム中は安心してお任せください。事前のご相談から滞在中まで、私たちがしっかりサポートいたします。
+      </div>
+    </div>
+
+    <div class="price-block featured">
+      <div class="step-label">STEP 2</div>
+      <h3>10日間 本気移住サポートプラン</h3>
+      <p class="tagline">暮らしを深く体験し、移住に向けた準備までしっかりサポート。</p>
+      <p class="change-label">この10日間で、こんなふうに変わります</p>
+      <ul class="checklist-inline">
+        <li>「暮らせるかな？」という不安が、安心に変わっていく</li>
+        <li>家族に合った暮らしに、自信が持てるようになる</li>
+        <li>移住後の生活が、はっきりイメージできる</li>
+        <li>「移住する」「もう少し考える」を納得して決められる</li>
+      </ul>
+      <div class="price-line"><span class="amount">¥428,000〜</span><span class="label">（税込・2名まで）</span></div>
+      <p class="price-meta">期間：10日間　/　対象：個人・家族・ご夫婦など<br>追加料金：高校生以上 +30,000円　小・中学生 +15,000円　未就学児 無料</p>
+      <div class="price-includes">
+        <strong>料金に含まれるもの</strong>
+        ご相談・ご提案、個別面談、ウェルカムディナー、移住相談、現地代行 など
+      </div>
+      <div class="price-includes price-excludes">
+        <strong>料金に含まれないもの</strong>
+        石垣島までの往復航空券、レンタカー代、宿泊費、お土産などの個人的支出
+      </div>
+    </div>
+
+    <p class="transport-note">レンタカーがなくても大丈夫です。タクシーや路線バスなど、公共交通機関でのご移動も可能です。</p>
+
+    <div class="value-note">
+      ご不明な点があれば、お気軽にお問い合わせください。
+    </div>
+  </div>
+</section>
+
+<!-- 7.5 キャンセルポリシー -->
+<section id="cancellation" class="section-gray">
+  <div class="wrap">
+    <div class="eyebrow">CANCELLATION POLICY</div>
+    <h2 class="sec-title">キャンセルポリシー</h2>
+    <p class="lead-text">お申し込み後、お客様都合によるキャンセルにつきましては、<br>以下のキャンセル料を申し受けます。</p>
+
+    <div class="cancel-card">
+      <div class="cancel-table">
+        <div class="cancel-row"><span class="cancel-timing">14日前まで</span><span class="cancel-fee is-free">無料</span></div>
+        <div class="cancel-row"><span class="cancel-timing">13日前〜7日前</span><span class="cancel-fee">ご利用料金の30%</span></div>
+        <div class="cancel-row"><span class="cancel-timing">6日前〜2日前</span><span class="cancel-fee">ご利用料金の50%</span></div>
+        <div class="cancel-row"><span class="cancel-timing">前日・当日</span><span class="cancel-fee">ご利用料金の100%</span></div>
+        <div class="cancel-row"><span class="cancel-timing">無断キャンセル</span><span class="cancel-fee">ご利用料金の100%</span></div>
+      </div>
+    </div>
+
+    <div class="cancel-notes">
+      <div class="cancel-notes-label">ご確認事項</div>
+      <ul class="checklist-plain" style="margin-left:auto;margin-right:auto;">
+        <li>台風・災害・航空機の欠航など、安全上やむを得ない事情により開催が困難と判断した場合は、キャンセル料はいただきません。</li>
+        <li>返金が発生する場合の振込手数料は、お客様負担となります。</li>
+        <li>日程変更をご希望の場合は、可能な限り柔軟に対応いたしますので、お早めにご相談ください。</li>
+      </ul>
+    </div>
+
+    <p class="bridge-line">皆さまに安心してご参加いただけるよう努めております。<br>ご理解とご協力のほど、よろしくお願いいたします。</p>
+  </div>
+</section>
+
+<!-- 8. 最後のメッセージ -->
+<section class="message">
+  <div class="wrap">
+    <div class="eyebrow">MESSAGE</div>
+    <h3 class="sec-title">最後に、私からのメッセージ</h3>
+    <blockquote>
+      私は、移住をすすめたいわけではありません。<br>
+      でも、人生を変える選択をする前に、その土地で"暮らしてみる"体験は、きっと大きな意味のあることだと思っています。<br><br>
+      あなたにとっての「これから」を考える時間を、一緒に過ごせたらと思います。
+    </blockquote>
+  </div>
+</section>
+
+<!-- 9. 最終CTA：安心材料つき -->
+<section class="final-cta" id="contact">
+  <div class="wrap">
+    <h2 class="sec-title">あなたは、どんな時間を島で過ごしたいですか？</h2>
+    <p>ここまで読んでくださり、ありがとうございます。<br>この時間が、あなたにとって心地よい"これから"を見つめ直すきっかけになれたら嬉しいです。</p>
+    <ul class="reassure-list">
+      <li>無理な勧誘はありません</li>
+      <li>移住をすすめるサービスではありません</li>
+      <li>相談だけでも大歓迎です</li>
+      <li>あなたに合うかどうかを、一緒に考えます</li>
+    </ul>
+    <p class="dm-badge">気になる方は、お気軽にDMください。</p>
+  </div>
+</section>
+
+<footer>
+  © 石垣島 暮らしの体験プログラム
+</footer>
+
+</body>
+</html>

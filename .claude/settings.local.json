@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"$HOME/Library/Application Support/Claude/local-agent-mode-sessions\" -maxdepth 2 -type d -newermt \"-1 day\" 2>/dev/null)",
+      "Bash(find \"$HOME/Library/Application Support/Claude\" -type f -newermt \"-2 hours\" 2>/dev/null | head -50)",
+      "Bash(grep -oE \"#[0-9a-fA-F]{3,6}\" \"/Users/tsunohifumi/サイト/index.html\")",
+      "Bash(git --version)",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git branch *)",
+      "Bash(git add *)"
+    ]
+  }
+}
