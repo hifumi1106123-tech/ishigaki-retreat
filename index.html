@@ -356,6 +356,19 @@
   }
   .price-was-num{ text-decoration:line-through; text-decoration-color:rgba(243,233,210,0.5); color:rgba(243,233,210,0.6); }
   .price-was-now{ color:var(--sunset); font-weight:600; }
+  .price-child-fee{
+    margin-top:1.3rem; padding-top:1.2rem; border-top:1px dashed rgba(255,255,255,0.16);
+  }
+  .price-child-fee-label{
+    font-size:0.72rem; letter-spacing:0.1em; color:var(--sand-dim); margin-bottom:0.7rem;
+  }
+  .price-child-fee ul{ list-style:none; display:flex; flex-direction:column; gap:0.5rem; }
+  .price-child-fee li{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:0.4rem 0.8rem;
+    font-size:0.8rem; color:rgba(243,233,210,0.82); line-height:1.6;
+  }
+  .price-child-fee li span:first-child{ white-space:nowrap; }
+  .price-child-fee li span:last-child{ color:var(--sand); white-space:nowrap; }
   .price-quote-note{ margin-top:0.8rem; font-size:0.78rem; color:var(--sand-faint); }
   .price-custom-note{
     margin-top:1.9rem; padding-top:1.7rem; border-top:1px dashed rgba(255,255,255,0.18);
@@ -612,7 +625,7 @@
 <section id="itinerary">
 
   <div class="day-panel day1">
-    <div class="bg-photo slow" style="background-image:url('images/ishigaki-living/day1-culture.jpg');"></div>
+    <div class="bg-photo slow" style="background-image:url('images/ishigaki-living/day1-coastal-road.jpg');"></div>
     <div class="tint"><div class="tint-a"></div><div class="tint-b"></div></div>
     <div class="day-content">
       <span class="day-num reveal">DAY 1</span>
@@ -743,10 +756,18 @@
         <div class="price-badge">オープン記念価格（先着2組限定）</div>
         <div class="price-amount-row">
           <span class="price-amount">¥149,000</span>
-          <span class="price-amount-label">（税込）／1組（大人2名まで）</span>
+          <span class="price-amount-label">（税込）／1組・2名まで</span>
         </div>
         <div class="price-was">
           通常価格 <span class="price-was-num">¥179,000</span>（税込） → <span class="price-was-now">¥149,000</span>
+        </div>
+        <div class="price-child-fee">
+          <div class="price-child-fee-label">お子さまの追加料金</div>
+          <ul>
+            <li><span>高校生以上</span><span>＋10,000円／1名</span></li>
+            <li><span>小・中学生</span><span>＋5,000円／1名</span></li>
+            <li><span>未就学児</span><span>無料</span></li>
+          </ul>
         </div>
         <div class="price-meta-grid">
           <div><strong>期間</strong>2泊3日</div>
@@ -782,10 +803,18 @@
         <div class="price-badge">オープン記念価格（先着1〜2組限定）</div>
         <div class="price-amount-row">
           <span class="price-amount">¥498,000〜</span>
-          <span class="price-amount-label">（税込）</span>
+          <span class="price-amount-label">（税込）／1組・2名まで</span>
         </div>
         <div class="price-was">
           通常価格 <span class="price-was-num">¥598,000〜</span>（税込） → <span class="price-was-now">¥498,000〜</span>
+        </div>
+        <div class="price-child-fee">
+          <div class="price-child-fee-label">お子さまの追加料金</div>
+          <ul>
+            <li><span>高校生以上</span><span>＋30,000円／1名</span></li>
+            <li><span>小・中学生</span><span>＋15,000円／1名</span></li>
+            <li><span>未就学児</span><span>無料</span></li>
+          </ul>
         </div>
         <p class="price-quote-note">※内容やサポート範囲に応じて、お見積もりいたします。</p>
         <div class="price-meta-grid">
@@ -902,7 +931,7 @@
   </div>
 </section>
 
-<footer>Photography — Unsplash</footer>
+<footer>© 石垣島 暮らしの体験プログラム</footer>
 
 <script>
 (function(){
